@@ -210,8 +210,9 @@ def runGame():
 							tempKey += str(event.unicode).upper()
 						elif event.key == pg.K_RETURN:
 							if findRoomKey(tempKey):
-								roomkey = tempKey
-								player = 2
+								if getRoom(tempKey, 'players') == 1:
+									roomkey = tempKey
+									player = 2
 
 				if roomkey == '':
 					if join:
